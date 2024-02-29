@@ -57,7 +57,7 @@ imageupload = st.file_uploader("Choose a PDF file", type="pdf")
 
 if imageupload is not None:
     # Display the uploaded image
-    st.image(imageupload, caption='Uploaded Image.', use_column_width=True)
+    # st.image(imageupload, caption='Uploaded Image.', use_column_width=True)
     st.write("Filename:", uploaded_file.name)
     st.write("File size:", uploaded_file.size, "bytes")
 
