@@ -5,7 +5,7 @@ from llama_index.vector_stores.qdrant import QdrantVectorStore
 from llama_index.core import VectorStoreIndex, StorageContext
 from llama_index.core.indices import MultiModalVectorStoreIndex
 from llama_index.core.schema import ImageDocument
-
+from PIL import Image
 import os
 import fitz
 import base64
