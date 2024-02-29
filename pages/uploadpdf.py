@@ -58,13 +58,13 @@ imageupload = st.file_uploader("Choose a PDF file", type="pdf")
 if imageupload is not None:
     # Display the uploaded image
     # st.image(imageupload, caption='Uploaded Image.', use_column_width=True)
-    st.write("Filename:", uploaded_file.name)
-    st.write("File size:", uploaded_file.size, "bytes")
+    st.write("Filename:", imageupload.name)
+    st.write("File size:", imageupload.size, "bytes")
 
     # Save the PDF to the data folder
-    file_path = os.path.join('data', uploaded_file.name)
+    file_path = os.path.join('data', imageupload.name)
     with open(file_path, "wb") as f:
-        f.write(uploaded_file.getbuffer())
+        f.write(imageupload.getbuffer())
     st.success(f"File saved in {file_path}")
     extract_images_from_pdf(file_path,'data')
     dirs = os.listdir('data')
