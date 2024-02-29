@@ -22,9 +22,14 @@ openai_mm_llm = OpenAIMultiModal(
 
 
 def extract_images_from_pdf(filepath, file_dir):
+
     
       img_path = os.path.join(file_dir, "pages")
       os.makedirs(img_path, exist_ok=True)
+      filelist = [ f for f in os.listdir(img_path) if f.endswith(".png") ]
+      for f in filelist:
+        os.remove(os.path.join(mydir, f))
+
       captiolist = []
       with fitz.open(filepath) as doc:
           for page in doc:  # iterate through the pages
