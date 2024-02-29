@@ -56,7 +56,7 @@ if imageupload is not None:
     st.write(dirs)
 
     image_documents = [
-        ImageDocument(image_path="data/pages/"+image_path) for image_path in dirs
+        ImageDocument(image_path=os.path.join("data/pages/",image_path)) for image_path in dirs
     ]
 
 
