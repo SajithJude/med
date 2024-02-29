@@ -17,7 +17,7 @@ from llama_index.core.schema import ImageNode
 from llama_index.multi_modal_llms.openai import OpenAIMultiModal
 
 openai_mm_llm = OpenAIMultiModal(
-    model="gpt-4-vision-preview", api_key=st.secrets["OPENAI_API_KEY"], max_new_tokens=9500
+    model="gpt-4-vision-preview", api_key=st.secrets["OPENAI_API_KEY"], max_new_tokens=3000
 )
 
 
