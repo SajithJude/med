@@ -6,6 +6,9 @@ from llama_index.core import VectorStoreIndex, StorageContext
 from llama_index.core.indices import MultiModalVectorStoreIndex
 from llama_index.core.schema import ImageDocument
 
+import os
+import fitz
+import base64
 # from llama_index.core.response.notebook_utils import display_source_node
 from llama_index.core.schema import ImageNode
 
