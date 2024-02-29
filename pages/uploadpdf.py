@@ -72,7 +72,7 @@ if imageupload is not None:
         f.write(imageupload.getbuffer())
     st.success(f"File saved in {file_path}")
     extract_images_from_pdf(file_path,'data')
-    dirs = os.listdir('data')
+    dirs = os.listdir('data/pages')
     st.write(dirs)
 
     # image_documents = [
