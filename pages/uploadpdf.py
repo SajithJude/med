@@ -61,7 +61,7 @@ if imageupload is not None:
 
 
     response = openai_mm_llm.complete(
-        prompt="Generate MCQ Questions that can be answered with the images, for MBBS graduates, with solutions",
+        prompt="Generate MCQ Questions with images including answers",
         image_documents=image_documents,
     )
 
