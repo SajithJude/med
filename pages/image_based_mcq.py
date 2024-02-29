@@ -46,9 +46,12 @@ if uploaded_file is not None:
     }
 
     response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
+    if response:
+        st.write(response.json())
+
     if response.status_code == 200:
         st.write("Response from OpenAI:")
         st.write(response.json())
     else:
-        st.error("Failed to get response from OpenAI API. Status code: " + str(response))
+        st.write("Failed to get response from OpenAI API. Status code: " + str(response))
 
