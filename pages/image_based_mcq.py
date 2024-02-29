@@ -26,23 +26,25 @@ if uploaded_file is not None:
     }
 
     payload = {
-        "model": "gpt-4-vision-preview",
-        "messages": [
+    "model": "gpt-4-vision-preview",
+    "messages": [
+        {
+        "role": "user",
+        "content": [
             {
-                "role": "user",
-                "content": [
-                    {
-                        "type": "text",
-                        "text": "Generate questions that can be asked from the image, to be answered by looking at the image"
-                    },
-                    {
-                        "type": "image",
-                        "data": f"data:image/jpeg;base64,{base64_image}"
-                    }
-                ]
+            "type": "text",
+            "text": "Generate questions that can be asked from the image, to be answered by looking at the image "
+            },
+            {
+            "type": "image_url",
+            "image_url": {
+                "url": f"data:image/jpeg;base64,{base64_image}"
             }
-        ],
-        "max_tokens": 3000
+            }
+        ]
+        }
+    ],
+    "max_tokens": 3000
     }
     headers
     payload
