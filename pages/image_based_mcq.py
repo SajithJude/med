@@ -55,4 +55,5 @@ if uploaded_file is not None:
         st.write(response.json())
     else:
         st.write("Failed to get response from OpenAI API. Status code: " + str(response))
+        response
 
