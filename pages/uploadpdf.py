@@ -9,6 +9,8 @@ from PIL import Image
 import os
 import fitz
 import base64
+# from b64encode import BytesIO
+import io
 # from llama_index.core.response.notebook_utils import display_source_node
 from llama_index.core.schema import ImageNode
 
