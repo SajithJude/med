@@ -13,6 +13,7 @@ def encode_image(uploaded_image):
 st.title("Image Upload for OpenAI Response")
 
 uploaded_file = st.file_uploader("Choose an image...", type=['jpg', 'jpeg', 'png'])
+
 if uploaded_file is not None:
     # Display the uploaded image
     st.image(uploaded_file, caption='Uploaded Image.', use_column_width=True)
@@ -33,7 +34,7 @@ if uploaded_file is not None:
         "content": [
             {
             "type": "text",
-            "text": "Generate questions that can be asked from the image, to be answered by looking at the image "
+            "text": "Generate 3 MCQ questions with answers that can be asked from the image, to be answered by examining the image "
             },
             {
             "type": "image_url",
@@ -46,16 +47,21 @@ if uploaded_file is not None:
     ],
     "max_tokens": 3000
     }
-    headers
-    payload
+    # headers
+    # payload
     response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
     # if response:
     #     st.json(response.json())
 
+    # Assuming 'response' is the variable that holds the response from the OpenAI API
     if response.status_code == 200:
+        # Extract the content from the first choice in the response
+        content = response.json()['choices'][0]['message']['content']
+        
         st.write("Response from OpenAI:")
-        st.write(response.json())
+        # Display the content using Streamlit
+        st.markdown(content)
     else:
-        st.write("Failed to get response from OpenAI API. Status code: " + str(response))
-        response
+        st.error("Failed to get response from OpenAI API. Status code: " + str(response.status_code))
+
 
