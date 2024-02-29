@@ -4,7 +4,7 @@ import base64
 import os
 
 # Assuming OPENAI_API_KEY is set in your environment variables
-api_key = os.environ.get('OPENAI_API_KEY')
+api_key =  st.secrets["OPENAI_API_KEY"]
 
 # Function to encode the image file uploaded
 def encode_image(uploaded_image):
