@@ -60,8 +60,10 @@ if imageupload is not None:
     ]
 
 
+
+
     response = openai_mm_llm.complete(
-        prompt="what is this",
+        prompt="Generate MCQ questions with answers, choices should be based on images in the page",
         image_documents=image_documents,
     )
 
