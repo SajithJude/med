@@ -26,7 +26,7 @@ def extract_images_from_pdf(filepath, file_dir):
     
       img_path = os.path.join(file_dir, "pages")
       os.makedirs(img_path, exist_ok=True)
-      filelist = [ f for f in os.listdir(img_path) if f.endswith(".png") ]
+      filelist = [ f for f in os.listdir(img_path) if (f.endswith(".png") or f.endswith(".jpeg")) ]
       for f in filelist:
         os.remove(os.path.join(img_path, f))
 
