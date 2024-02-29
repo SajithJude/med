@@ -17,7 +17,7 @@ from llama_index.core.schema import ImageNode
 from llama_index.multi_modal_llms.openai import OpenAIMultiModal
 
 openai_mm_llm = OpenAIMultiModal(
-    model="gpt-4-vision-preview", api_key=st.secrets["OPENAI_API_KEY"], max_new_tokens=1500
+    model="gpt-4-vision-preview", api_key=st.secrets["OPENAI_API_KEY"], max_new_tokens=9500
 )
 
 
@@ -55,15 +55,15 @@ if imageupload is not None:
     dirs = os.listdir('data/pages')
     st.write(dirs)
 
-    # image_documents = [
-    #     ImageDocument(image_path=image_path) for image_path in retrieved_images
-    # ]
+    image_documents = [
+        ImageDocument(image_path=image_path) for image_path in retrieved_images
+    ]
 
 
-    # response = openai_mm_llm.complete(
-    #     prompt="Compare llama2 with llama1?",
-    #     image_documents=image_documents,
-    # )
+    response = openai_mm_llm.complete(
+        prompt="Generate MCQ Questions that can be answered with the images, for MBBS graduates, with solutions",
+        image_documents=image_documents,
+    )
 
 
 # if response:
