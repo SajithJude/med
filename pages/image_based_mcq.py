@@ -44,10 +44,11 @@ if uploaded_file is not None:
         ],
         "max_tokens": 3000
     }
-
+    headers
+    payload
     response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
-    if response:
-        st.json(response.json())
+    # if response:
+    #     st.json(response.json())
 
     if response.status_code == 200:
         st.write("Response from OpenAI:")
