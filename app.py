@@ -1,7 +1,12 @@
+# import streamlit as st
+# import fitz  # PyMuPDF
+# import os
 import streamlit as st
 import fitz  # PyMuPDF
 import os
-
+import shutil
+from PIL import Image
+import io
 # Create a data directory if it doesn't exist
 if not os.path.exists('data'):
     os.makedirs('data')
