@@ -28,7 +28,7 @@ def extract_images_from_pdf(filepath, file_dir):
       os.makedirs(img_path, exist_ok=True)
       filelist = [ f for f in os.listdir(img_path) if f.endswith(".png") ]
       for f in filelist:
-        os.remove(os.path.join(mydir, f))
+        os.remove(os.path.join(img_path, f))
 
       captiolist = []
       with fitz.open(filepath) as doc:
