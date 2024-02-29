@@ -60,7 +60,7 @@ if uploaded_file is not None:
         shutil.make_archive(base_name=img_path, format='zip', root_dir=img_path)
         
         # Provide a button to download the ZIP file
-        with open(zip_path + '.zip', "rb") as fp:
+        with open(zip_path , "rb") as fp:
             btn = st.download_button(
                 label="Download Images as ZIP",
                 data=fp,
